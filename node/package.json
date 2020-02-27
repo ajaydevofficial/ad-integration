@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "facebook-nodejs-business-sdk": "^6.0.0",
+    "facebook-sdk": "^0.3.3",
+    "fb": "^2.0.0",
+    "nodemon": "^2.0.2"
   }
 }

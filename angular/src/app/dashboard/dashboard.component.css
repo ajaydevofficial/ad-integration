@@ -4,3 +4,6 @@
 .row{
   height: 100%;
 }
+table *{
+  color: white;
+}

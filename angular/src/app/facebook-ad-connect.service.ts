@@ -8,8 +8,8 @@ export class FacebookAdConnectService {
 
   constructor(private http:HttpClient) { }
 
-  sendTokenToServer(token:any){
-    return this.http.get('http://localhost:8000/connect/' + token)
+  sendTokenToServer(token:any,userId:any){
+    return this.http.get('http://localhost:8000/connect/'+ userId  + "/" + token)
   }
 
 }

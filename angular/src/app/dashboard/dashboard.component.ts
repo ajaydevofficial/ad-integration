@@ -11,6 +11,9 @@ declare var FB: any;
 })
 export class DashboardComponent implements OnInit {
 
+  adget:boolean = false;
+  name;
+  ad_id;
 
   constructor(private service:FacebookAdConnectService) {
 
@@ -46,8 +49,10 @@ export class DashboardComponent implements OnInit {
           if (response.authResponse)
           {
 
-            this.service.sendTokenToServer(response.authResponse.accessToken).subscribe(response=>{
-              console.log(response)
+            this.service.sendTokenToServer(response.authResponse.accessToken,response.authResponse.userID)
+            .subscribe(res=>{
+              alert("Name : " + res.name);
+              alert("Ad_ID : " + res.id);
             },error=>{
               console.log(error)
             });
@@ -58,6 +63,8 @@ export class DashboardComponent implements OnInit {
             console.log('User login failed');
           }
       });
+
+
 
   }
 

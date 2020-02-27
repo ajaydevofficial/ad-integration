@@ -4,5 +4,20 @@
       <i class="fab fa-facebook mr-2"></i>
       <span>Facebook Ads</span>
     </button>
+
+    <table *ngIf="adget" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Ad Account ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th [innerHtml]="name"></th>
+          <td [innerHtml]="ad_id"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
