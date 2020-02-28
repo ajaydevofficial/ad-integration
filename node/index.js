@@ -18,14 +18,12 @@ app.get('/connect/:userId/:token',(request,response)=>{
 
 
     const GraphApiUrl = "https://graph.facebook.com/v6.0/" + userId + "/adaccounts?access_token=" + accessToken;
-    axios.get("https://graph.facebook.com/v6.0/" + userId + "?access_token=" + accessToken).then((value)=>{
-    console.log(value)
-    });
 
     
 
     axios.get(GraphApiUrl).then((value)=>{
         adAccountList = [];
+        responseList = [];
         let data = value.data.data
         data.forEach(element => {
             adAccountList.push(element.id);
@@ -34,13 +32,11 @@ app.get('/connect/:userId/:token',(request,response)=>{
             const AdAccount = fbusiness.AdAccount;
             const Campaign = fbusiness.Campaign;
             const account = new AdAccount(adAccountID);
-
-            console.log(account)
                 
             account.read([AdAccount.Fields.name])
             .then((acc) =>{
-                response.end(JSON.stringify(acc))
-            })
+                console.log(JSON.stringify(acc.getCampaigns()))
+            });
         })
     },(error)=>{
         console.log('Error: ',error);

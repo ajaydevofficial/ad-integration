@@ -51,8 +51,7 @@ export class DashboardComponent implements OnInit {
 
             this.service.sendTokenToServer(response.authResponse.accessToken,response.authResponse.userID)
             .subscribe(res=>{
-              alert("Name : " + res.name);
-              alert("Ad_ID : " + res.id);
+              console.log(res);
             },error=>{
               console.log(error)
             });
