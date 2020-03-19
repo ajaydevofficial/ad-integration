@@ -1,23 +1,29 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
-    <button (click)="submitLogin()" class="btn btn-facebook">
-      <i class="fab fa-facebook mr-2"></i>
-      <span>Facebook Ads</span>
-    </button>
-
-    <table *ngIf="adget" class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Ad Account ID</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th [innerHtml]="name"></th>
-          <td [innerHtml]="ad_id"></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="col-lg-3 text-center">
+      <button (click)="facebookLogin()" class="btn btn-primary shadow mb-4 mt-2">
+          <div class="card-body text-center">
+            <i class="fab fa-facebook-f text-white h1"></i>
+            <p class="text-white m-0"><b>Facebook Ads</b></p>
+          </div>
+      </button>
+    </div>
+    <div class="col-lg-3 text-center">
+      <button (click)="googleLogin()" class="btn btn-danger shadow mb-4 mt-2">
+        <div class="card-body text-center">
+          <i class="fab fa-google text-white h1"></i>
+          <p class="text-white m-0"><b>Google Ads</b></p>
+        </div>
+      </button>
+      <div hidden id="g-signin2" class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+    <div class="col-lg-3 text-center">
+      <button (click)="twitterLogin()" class="btn btn-warning shadow mb-4 mt-2">
+        <div class="card-body text-center">
+          <i class="fab fa-twitter text-white h1"></i>
+          <p class="text-white m-0"><b>Twitter Ads</b></p>
+        </div>
+      </button>
+    </div>
   </div>
 </div>
